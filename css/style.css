@@ -3,7 +3,7 @@
 *{
     margin: 0;
     padding: 0;
-    border: 1px solid black  ;
+    /* border: 1px solid black  ; */
     box-sizing: border-box;
 }
 html,body{
@@ -35,6 +35,10 @@ body{
     letter-spacing: 2px;
     left: 0;
 }
+.logoIcon{
+    top: 10px;
+}
+
 ul{
     position: absolute;
     right: 0;
@@ -78,25 +82,52 @@ a:hover{
 
 /* ------------ container -------------- */
 .container{
-    
     font-family: 'Anton', sans-serif;
     display: flex;
     height: 90%;
+    width: 100%;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    
 }
 h1{
     font-size: 60px;
     line-height: 1.0;
     letter-spacing: 10px;
     font-weight: 100;
+    z-index: 3;
+    /* mix-blend-mode: exclusion; */
 }
 h3{
     font-size: 25PX;
     letter-spacing: 5px;
     font-weight: 100;
+    z-index: 3;
+    /* mix-blend-mode: exclusion; */
 }
+
+.mainPhoto{
+    position: fixed;
+    right: 10vmin;
+    width: 850px;
+    height: 650px;
+    justify-content: start;
+    z-index: -1;
+    mix-blend-mode: hard-light;
+}
+.bg-video{
+    right: 10vmin;
+    position: fixed;
+    width:800px;
+    height:600px;
+    z-index: -2;
+    opacity: 0.7;
+}
+
+
+
+
 
 /* ------------- footer ------------- */
 .footer{
@@ -105,7 +136,9 @@ h3{
     align-items: center;
     justify-content: center;
 }
-
+h5{
+    padding: 5px;
+}
 
 
 /* ----------- RWD ------------- */
@@ -128,7 +161,7 @@ h3{
         width: 100%;
         top: 8vh;
         background-color:gray;
-        display: flex;
+        display: none;
         flex-direction: column;
         align-items: center;
         transform: translateX(120%);
@@ -141,6 +174,17 @@ h3{
     .burger{
         display: block;
     }
+    .mainPhoto{
+        right: -100px;
+        width: 650px;
+        height: 500px;
+    }
+    .bg-video{
+        right: 0px;
+        width:450px;
+        height:500px;
+    }
+    
 }
 /* iphone */
 @media screen and (max-width:414px){
@@ -153,6 +197,19 @@ h3{
     .burger{
         display: block;
     }
+    .mainPhoto{
+        z-index: 2;
+        top:80px;
+        right: -80px;
+        width: 500px;
+        height: 400px;
+    }
+    .bg-video{
+        right: 0px;
+        width:300px;
+        height:500px;
+    }
+
 }
 
 
