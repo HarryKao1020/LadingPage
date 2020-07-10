@@ -3,7 +3,7 @@
 *{
     margin: 0;
     padding: 0;
-    /* border: 1px solid black  ; */
+    /* border: 1px solid black; */
     box-sizing: border-box;
 }
 html,body{
@@ -32,11 +32,14 @@ body{
 .logo{
     position: absolute;
     font-size: 20px;
-    letter-spacing: 2px;
+    letter-spacing: 3px;
     left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 .logoIcon{
-    top: 10px;
+    margin-right: 5px;
 }
 
 ul{
@@ -47,7 +50,7 @@ ul{
 
 .nav-items{
     font-size: 20px;
-    letter-spacing: 2px;
+    letter-spacing: 3px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -61,7 +64,9 @@ ul{
 a:hover{
     color: #ffd500;
 }
-
+.nav-item:hover{
+    border-bottom: 1px solid #ffd500;
+}
 /* ------burger-------- */
 .burger{
     position: absolute;
@@ -82,6 +87,7 @@ a:hover{
 
 /* ------------ container -------------- */
 .container{
+    /* position: relative; */
     font-family: 'Anton', sans-serif;
     display: flex;
     height: 90%;
@@ -89,6 +95,7 @@ a:hover{
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    /* border: 1px solid red  ; */
     
 }
 h1{
@@ -97,9 +104,11 @@ h1{
     letter-spacing: 10px;
     font-weight: 100;
     z-index: 3;
-    /* mix-blend-mode: exclusion; */
 }
+
+
 h3{
+    margin-top: 3vh;
     font-size: 25PX;
     letter-spacing: 5px;
     font-weight: 100;
@@ -115,15 +124,71 @@ h3{
     justify-content: start;
     z-index: -1;
     mix-blend-mode: hard-light;
+    
 }
 .bg-video{
     right: 10vmin;
+    top:100px;
     position: fixed;
-    width:800px;
-    height:600px;
+    width:850px;
     z-index: -2;
     opacity: 0.7;
+    overflow: hidden;
 }
+
+.skills{
+    position: absolute;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+
+}
+.skill{
+    width: 330px;
+    height: 50px;
+    margin-bottom: 10px;
+    background-color: #FFD500;
+    opacity: 0.7;
+    transition: width 1s;
+}
+.skill1{
+    width:95px;
+    
+}
+.skill2{
+    width:165px;
+    
+}
+.skill3{
+    width:230px;
+    
+}
+.skill4{
+    width:280px;
+}
+
+
+.skillText{
+    /* border: 1px solid blue; */
+    position: absolute;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+}
+.sk{
+    height: 50px;
+    /* border: 1px solid blue; */
+    font-weight: 100;
+    letter-spacing: 0.3rem;
+    font-size: 30px;
+    padding-left: 75px;
+    margin-bottom: 10px;
+}
+
 
 
 
@@ -135,6 +200,7 @@ h3{
     flex-direction: row;
     align-items: center;
     justify-content: center;
+    padding: 5px;
 }
 h5{
     padding: 5px;
@@ -180,9 +246,13 @@ h5{
         height: 500px;
     }
     .bg-video{
+        margin-top:150px;
         right: 0px;
-        width:450px;
+        width:550px;
         height:500px;
+    }
+    .skills,.skillText{
+        display: none;
     }
     
 }
@@ -205,13 +275,29 @@ h5{
         height: 400px;
     }
     .bg-video{
+        margin-top: -50px;
         right: 0px;
-        width:300px;
-        height:500px;
+        width:500px;
+        height:400px;
+        /* z-index: 2; */
+    }
+    .skills,.skillText{
+        display: none;
     }
 
 }
 
+
+
+/* ------- skill animation */
+@keyframes skilljump{
+    from{
+        width: 0%;
+    }
+    to{
+        width:95px;
+    }
+}
 
 
 /* ------- burger animation */
