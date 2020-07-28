@@ -85,6 +85,8 @@ a:hover{
 }
 
 
+
+
 /* ------------ container -------------- */
 .container{
     /* position: relative; */
@@ -226,10 +228,12 @@ h5{
         height: 90vh;
         width: 100%;
         top: 8vh;
-        background-color:gray;
-        display: none;
+        z-index: 10;
+        /* display: none; */
+        background-color:white;
         flex-direction: column;
         align-items: center;
+        justify-content: space-around;
         transform: translateX(120%);
         transition: transform 0.5s ease-in;
         
@@ -237,17 +241,23 @@ h5{
     .nav-items li{
         opacity: 0;
     }
+
+    .nav-item{
+        color:white;
+    }
     .burger{
         display: block;
     }
     .mainPhoto{
-        right: -100px;
+        position: fixed;
+        left: 60px;
         width: 650px;
         height: 500px;
     }
     .bg-video{
+        position: fixed;
         margin-top:150px;
-        right: 0px;
+        margin-right: 800px;
         width:550px;
         height:500px;
     }
@@ -304,4 +314,25 @@ h5{
 
 .nav-active{
     transform: translateX(0%);
+}
+
+@keyframes navLinkFade{
+    from{
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to{
+        opacity: 1;
+        transform: translateX(0px);
+    }
+}
+
+.toggle .line1{
+    transform: rotate(-45deg) translate(-5px,6px);
+}
+.toggle .line2{
+    opacity: 0;
+}
+.toggle .line3{
+    transform: rotate(45deg) translate(-8px,-10px);
 }

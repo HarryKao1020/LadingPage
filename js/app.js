@@ -1,46 +1,25 @@
-// var navSlide = ()=>{
-//     const burger = document.querySelector('.burger')
-//     const navitems = document.querySelector(".nav-items");
-//     burger.addEventListener('click',()=> {
-//         navitems.classList.toggle('nav-active')
-//     })
+var navSlide = ()=>{
+    const burger = document.querySelector('.burger')
+    const navitems = document.querySelector(".nav-items");
+    const navLinks = document.querySelectorAll('.nav-items li')
 
-// }
 
-function showText() {
-    $(this).text("Hello world")
-}
+    burger.addEventListener('click',()=> {
 
-$(".burger").click(function(){
+        // click後 在目標增加/減少 nav-active
+        navitems.classList.toggle('nav-active')
 
-    $(".nav-itmes").animate({
-        left: "5px"
+        //Animation Links
+        navLinks.forEach((link, index) => {
+            if(link.style.animation){
+                link.style.animation='';
+            }else{
+                link.style.animation = `navLinkFade 0.5s ease forwards ${index / 5 + 0.5 }s`;
+            }
+        });
+
+        // burger animation  轉成X
+        burger.classList.toggle('toggle')
     })
-})
-
-
-
-
-
-
-
-// navSlide();
-
-
-// ------ canvas --------
-// (function () {
-//     const canvas = document.querySelector('.bg-canvas');
-//     const ctx = canvas.getContext('2d');
-//     const video = document.querySelector('.bg-video');
-
-//     video.addEventListener('play', draw);
-		
-//     function draw() {
-//         canvas.width = canvas.clientWidth;
-//         canvas.height = canvas.clientHeight;
-//         if (video.paused || video.ended) return false;
-//         ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
-
-//         requestAnimationFrame(draw);
-//     }
-// })();
+}
+navSlide();
