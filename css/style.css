@@ -218,9 +218,13 @@ h5{
 }
 
 /* ipad */
-@media screen and (max-width:768px){
+@media screen and (max-width:768px) and (min-width:414px){
     body{
         overflow-x: hidden;
+    }
+
+    h1{
+        color:red;
     }
     .nav-items{
         font-size: 16px;
@@ -231,7 +235,7 @@ h5{
         top: 8vh;
         z-index: 10;
         /* display: none; */
-        background-color:gray;
+        background-color:white;
         flex-direction: column;
         align-items: center;
         justify-content: space-around;
@@ -270,11 +274,11 @@ h5{
 /* iphone */
 @media screen and (max-width:414px){
     body{
+        overflow-x: hidden;
         padding: .5rem 1.5rem;
     }
     h1{
         font-size: 50px;
-        color:red
     }
     .nav-items{
         font-size: 16px;
@@ -312,11 +316,12 @@ h5{
         height: 300px;
     }
     .bg-video{
+        position: fixed;
         margin-top: -50px;
-        right: 0px;
+        left: 0px;
         width:500px;
         height:400px;
-        /* z-index: 2; */
+        z-index: 1;
     }
     .skills,.skillText{
         display: none;
