@@ -231,7 +231,7 @@ h5{
         top: 8vh;
         z-index: 10;
         /* display: none; */
-        background-color:white;
+        background-color:gray;
         flex-direction: column;
         align-items: center;
         justify-content: space-around;
@@ -272,18 +272,44 @@ h5{
     body{
         padding: .5rem 1.5rem;
     }
+    h1{
+        font-size: 50px;
+        color:red
+    }
     .nav-items{
-        display: none;
+        font-size: 16px;
+        position: absolute;
+        right: 0;
+        height: 95vh;
+        width: 100%;
+        top: 8vh;
+        z-index: 10;
+        /* display: none; */
+        background-color:white;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+        transform: translateX(120%);
+        transition: transform 0.5s ease-in;
+        
+    }
+    .nav-items li{
+        opacity: 0;
+    }
+
+    .nav-item{
+        color:white;
+    }
     }
     .burger{
         display: block;
     }
     .mainPhoto{
         z-index: 2;
-        top:80px;
-        right: -80px;
-        width: 500px;
-        height: 400px;
+        top:120px;
+        left:0px;
+        width: 400px;
+        height: 300px;
     }
     .bg-video{
         margin-top: -50px;
